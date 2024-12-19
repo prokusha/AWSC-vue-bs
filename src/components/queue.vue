@@ -53,7 +53,10 @@ onBeforeUnmount(() => {
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <p v-for="queue in queueList">{{ queue.author }} - {{ queue.title }}</p>
+            <p v-for="queue in queueList"
+                :class="{'bg-danger': !queue.link, 'bg-success': queue.link}"
+                class="rounded p-2 mb-2"
+            >{{ queue.author }} - {{ queue.title }}</p>
         </div>
     </div>
 </template>
